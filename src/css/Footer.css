@@ -1,0 +1,30 @@
+.footer {
+    width: 100%;
+    margin-top: auto;
+    padding: 24px 28px;
+    background-color: #ffffff;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.footer-p {
+    margin: 0;
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    text-align: center;
+}
+
+@media (max-width: 640px) {
+    .footer {
+        padding: 18px 16px;
+    }
+
+    .footer-p {
+        font-size: 13px;
+    }
+}
