@@ -1,7 +1,9 @@
 import ProductCard from "../components/ProductCard";
 import useFetch from "../hooks/useFetch";
-import type { Product } from "../types/product";
+import type { Product } from "../types/types";
 import "../css/HomePage.css";
+import SearchBar from "../components/SearchBar";
+import { useState } from "react";
 
 function HomePage() {
     const {
@@ -9,15 +11,21 @@ function HomePage() {
         loading,
         error,
     } = useFetch<Product[]>("https://fakestoreapi.com/products");
+    const [search , setSearch] = useState("")
 
     if (loading) return <div className="status">Loading...</div>;
     if (error) return <div className="status">Error...</div>;
+    const filterProduct = products?.filter(p => p.title.toLowerCase().includes(search.toLowerCase()))
 
     return (
         <div className="home">
             <h1 className="title">Products</h1>
+            <SearchBar search={search} setSearch={setSearch}/>
             <div className="grid">
-                {products?.map((d) => (
+                {filterProduct?.length === 0 && (
+                    <div className="search-error"> PRODUCT NOT FOUND</div>
+                )}
+                {filterProduct?.map((d) => (
                     <ProductCard key={d.id} product={d} />
                 ))}
             </div>
