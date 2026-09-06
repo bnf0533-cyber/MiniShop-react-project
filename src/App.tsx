@@ -1,17 +1,19 @@
-// import { Router, Routes } from "react-router";
+import { Routes, Route } from "react-router";
 import "./App.css";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
 import HomePage from "./pages/HomePage";
-
+import Layout from "./Layout";
+import ProductPage from "./pages/ProductPage";
+import FavoritesPage from "./pages/FavoritesPage";
 
 function App() {
     return (
-        <>
-            <Header />
-            <HomePage/>
-            <Footer />
-        </>
+        <Routes>
+            <Route path="/" element={<Layout />}>
+                <Route index element={<HomePage />} />
+                <Route path="products/:id" element={<ProductPage />} />
+                <Route path="favorites" element={<FavoritesPage />} />
+            </Route>
+        </Routes>
     );
 }
 

@@ -1,6 +1,8 @@
 import { Link } from "react-router";
-import "../css/Header.css"
+import { useFavoriteStore } from "../store/favoritesStore";
+import "../css/Header.css";
 function Header() {
+    const { favorites } = useFavoriteStore();
     return (
         <header>
             <nav className="header">
@@ -12,7 +14,8 @@ function Header() {
                         Products
                     </Link>
                     <Link to="/favorites" className="header-link">
-                        Favorites({})
+                        Favorites
+                        <span className="badge">{favorites.length}</span>
                     </Link>
                 </div>
                 <div className="dark-mode">
