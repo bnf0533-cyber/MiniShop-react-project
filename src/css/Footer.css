@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .footer-p {
@@ -17,6 +18,16 @@
     font-weight: 400;
     letter-spacing: 0.2px;
     text-align: center;
+    transition: color 0.25s ease;
+}
+
+.layout.dark .footer {
+    background-color: #1e293b;
+    border-top-color: #334155;
+}
+
+.layout.dark .footer-p {
+    color: #94a3b8;
 }
 
 @media (max-width: 640px) {

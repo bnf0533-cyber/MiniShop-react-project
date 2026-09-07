@@ -15,3 +15,21 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  color: #1e293b;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.layout > :nth-child(2) {
+  flex: 1 0 auto;
+}
+
+.layout.dark {
+  background-color: #0f172a;
+  color: #f1f5f9;
+}

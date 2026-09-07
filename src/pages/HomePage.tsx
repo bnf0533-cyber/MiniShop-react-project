@@ -12,7 +12,7 @@ function HomePage() {
         error,
     } = useFetch<Product[]>("https://fakestoreapi.com/products");
     const [search , setSearch] = useState("")
-
+    if (!products) return <div className="status">Something wrong please check your request!</div>
     if (loading) return <div className="status">Loading...</div>;
     if (error) return <div className="status">Error...</div>;
     const filterProduct = products?.filter(p => p.title.toLowerCase().includes(search.toLowerCase()))

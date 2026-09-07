@@ -25,7 +25,6 @@ function FavoritesList() {
                             className="btn-remove-fav"
                             onClick={() => removeFromFavorite(product.id)}
                         >
-                            {" "}
                             🗑️ Remove
                         </button>
                     </div>
