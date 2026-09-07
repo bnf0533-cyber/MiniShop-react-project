@@ -6,7 +6,9 @@ header {
     top: 0;
     z-index: 50;
     box-sizing: border-box;
-    transition: background-color 0.25s ease, border-color 0.25s ease;
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .header {
@@ -30,7 +32,9 @@ header {
     color: #1b7a63;
     text-decoration: none;
     letter-spacing: -0.3px;
-    transition: opacity 0.2s ease, color 0.25s ease;
+    transition:
+        opacity 0.2s ease,
+        color 0.25s ease;
 }
 
 .header-headline a:hover {
@@ -80,6 +84,7 @@ header {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    transform: translateY(-8px);
     background-color: #ef4444;
     color: #ffffff;
     font-size: 11px;

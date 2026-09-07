@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 import { useFavoriteStore } from "../store/favoritesStore";
 import "../css/Header.css";
 import ThemeToggle from "./ThemeToggle";
@@ -8,21 +8,19 @@ function Header() {
         <header>
             <nav className="header">
                 <div className="header-headline">
-                    <Link to="/">Mini Shop</Link>
+                    <NavLink to="/">Mini Shop</NavLink>
                 </div>
                 <div className="header-links">
-                    <Link to="/" className="header-link">
+                    <NavLink to="/" end className="header-link">
                         Products
-                    </Link>
-                    <Link to="/favorites" className="header-link">
+                    </NavLink>
+                    <NavLink to="/favorites" className="header-link">
                         Favorites
                         <span className="badge">{favorites.length}</span>
-                    </Link>
+                    </NavLink>
                 </div>
                 <div className="dark-mode">
-                    
-                        <ThemeToggle/>
-                    
+                    <ThemeToggle />
                 </div>
             </nav>
         </header>
