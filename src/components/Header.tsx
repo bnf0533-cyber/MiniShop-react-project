@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { useFavoriteStore } from "../store/favoritesStore";
 import "../css/Header.css";
+import ThemeToggle from "./ThemeToggle";
 function Header() {
     const { favorites } = useFavoriteStore();
     return (
@@ -19,9 +20,9 @@ function Header() {
                     </Link>
                 </div>
                 <div className="dark-mode">
-                    <button className="btn-dark-mode">
-                        {/* { && "light"} */}
-                    </button>
+                    
+                        <ThemeToggle/>
+                    
                 </div>
             </nav>
         </header>
